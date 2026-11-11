@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AI Music Generation Studio</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="app-container">
+      <header class="navbar">
+        <div class="brand">
+          <div class="brand-icon">♫</div>
+          <span>Music Studio</span>
+        </div>
+
+        <div class="model-badge">
+          <span class="status-dot"></span>
+          AI Model Ready
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="hero">
+          <div class="eyebrow">AI POWERED MUSIC CREATION</div>
+
+          <h1>
+            Turn your imagination<br />
+            into <span>music.</span>
+          </h1>
+
+          <p>
+            Describe the sound you imagine. Let artificial intelligence compose
+            it for you.
+          </p>
+        </section>
+
+        <section class="studio-card">
+          <div class="section-heading">
+            <div>
+              <h2>Create your soundtrack</h2>
+              <p>Customize the mood, genre, and sound.</p>
+            </div>
+
+            <div class="music-symbol">♫</div>
+          </div>
+
+          <label for="prompt">Describe your music</label>
+
+          <textarea
+            id="prompt"
+            placeholder="Example: Soft piano melodies with dreamy ambient sounds, perfect for a peaceful night..."
+            rows="4"
+          ></textarea>
+
+          <div class="presets">
+            <div class="field-group">
+              <label for="mood">Mood</label>
+
+              <select id="mood">
+                <option>Calm</option>
+                <option>Happy</option>
+                <option>Epic</option>
+                <option>Sad</option>
+                <option>Cinematic</option>
+                <option>Energetic</option>
+                <option>Dreamy</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="genre">Music genre</label>
+
+              <select id="genre">
+                <option>Classical</option>
+                <option>Pop</option>
+                <option>Jazz</option>
+                <option>Lo-fi</option>
+                <option>Electronic</option>
+                <option>Ambient</option>
+                <option>Orchestral</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="duration">Duration</label>
+
+              <select id="duration">
+                <option value="5">5 seconds</option>
+                <option value="8" selected>8 seconds</option>
+                <option value="10">10 seconds</option>
+                <option value="15">15 seconds</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="generateBtn" class="generate-btn">
+            <span class="button-icon">♫</span>
+            Generate Music
+            <span class="button-arrow">→</span>
+          </button>
+
+          <div id="loading" class="loading hidden">
+            <div class="loader"></div>
+
+            <div>
+              <h3>Composing your music...</h3>
+              <p>
+                AI is creating your unique soundtrack. This may take a while.
+              </p>
+            </div>
+          </div>
+
+          <div id="result" class="result hidden">
+            <div class="result-heading">
+              <div class="result-icon">♫</div>
+
+              <div>
+                <h3>Your soundtrack is ready</h3>
+                <p id="resultPrompt"></p>
+              </div>
+            </div>
+
+            <audio id="audioPlayer" controls></audio>
+
+            <a id="downloadBtn" class="download-btn" download>
+              ↓ Download WAV
+            </a>
+          </div>
+
+          <div id="error" class="error hidden"></div>
+        </section>
+
+        <div class="footer">
+          <span>Powered by Meta MusicGen</span>
+          <span>AI Music Generation Project</span>
+        </div>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
