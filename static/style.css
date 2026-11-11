@@ -31,7 +31,7 @@ body {
 }
 
 .navbar {
-    height: 76px;
+    height: 60px;
     padding: 0 8%;
     display: flex;
     justify-content: space-between;
@@ -80,7 +80,7 @@ body {
 .main-content {
     max-width: 900px;
     margin: auto;
-    padding: 55px 24px 30px;
+    padding: 20px 24px 30px;
 }
 
 .hero {
