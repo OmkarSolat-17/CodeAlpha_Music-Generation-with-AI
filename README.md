@@ -1,88 +1,112 @@
-# 🎵 AI Music Generation (Task 3)
+# 🎵 AI Music Generation
 
-An AI-powered text-to-music generation web application that creates music based on user-provided text prompts. The application uses Meta's MusicGen model through Hugging Face Transformers.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" alt="Flask">
+  <img src="https://img.shields.io/badge/Model-MusicGen-FF6F00?style=flat-square&logo=huggingface&logoColor=white" alt="MusicGen">
+  <img src="https://img.shields.io/badge/Framework-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="License">
+</p>
+
+<p align="center">
+  <b>Generate music from text descriptions using Meta's MusicGen model.</b><br>
+  <sub>AI-powered text-to-music web application with mood, genre, and duration controls.</sub>
+</p>
+
+---
 
 ## ✨ Features
 
-- Generate music from text descriptions
-- Mood and genre selection
+- Generate music from natural language descriptions
+- Mood and genre selection controls
 - Adjustable music duration
-- AI-generated audio playback
+- AI-generated audio playback in browser
 - Download generated music in WAV format
 - Interactive web interface
 
 ## 🛠️ Tech Stack
 
-- **Python** – Backend development
-- **Flask** – Web framework
-- **Meta MusicGen-small** – Music generation model
-- **Hugging Face Transformers** – AI model integration
-- **PyTorch** – Deep learning framework
-- **SciPy** – WAV audio file processing
-- **HTML5, CSS3, JavaScript** – Frontend
+| Component | Technology |
+|:----------|:-----------|
+| **Backend** | Python, Flask |
+| **AI Model** | Meta MusicGen-small |
+| **ML Framework** | PyTorch, Hugging Face Transformers |
+| **Audio** | SciPy (WAV processing) |
+| **Frontend** | HTML5, CSS3, JavaScript |
 
 ## ⚙️ Installation & Setup
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/OmkarSolat-17/CodeAlpha_MusicGeneration.git
-cd CodeAlpha_MusicGeneration
+git clone https://github.com/OmkarSolat-17/CodeAlpha_Music-Generation-with-AI.git
+cd CodeAlpha_Music-Generation-with-AI
 ```
 
-### 2. Install dependencies
+### 2. Create virtual environment
+
+```bash
+python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+```
+
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the application
+### 4. Run the application
 
 ```bash
 python app.py
 ```
 
-### 4. Open in browser
+### 5. Open in browser
 
-Visit:
-
-```text
-http://127.0.0.1:5000
-```
+Visit: `http://127.0.0.1:5000`
 
 ## 🧠 How It Works
 
-1. The user enters a music description.
-2. Mood, genre, and duration settings are selected.
-3. The text prompt is passed to the MusicGen model.
-4. The model generates audio based on the prompt.
-5. The generated music can be played or downloaded.
+```
+Text Prompt → Mood/Genre/Duration Settings → MusicGen Model → Audio Output → WAV File
+                                                    ↓
+                                         Hugging Face Transformers
+```
+
+1. User enters a text description of the desired music
+2. Mood, genre, and duration settings are configured
+3. The prompt is passed to Meta's MusicGen-small model via Hugging Face Transformers
+4. The model generates raw audio based on the text prompt
+5. Audio is converted to WAV format using SciPy
+6. Generated music can be played in-browser or downloaded
 
 ## ⚠️ Requirements
 
-- Python environment with compatible PyTorch and Transformers versions
-- Internet connection for downloading the pretrained model initially
-- Sufficient RAM and processing power for audio generation
+- **Python** 3.10+ with compatible PyTorch and Transformers versions
+- **Internet connection** for initial model download (~2 GB)
+- **RAM:** 8 GB+ recommended (model is memory-intensive)
+- **GPU** optional but recommended for faster generation
 
-**Note:** Music generation can be computationally intensive, especially on CPU-based systems.
+> **Note:** Music generation is computationally intensive, especially on CPU. First run downloads the pretrained model.
 
 ## 📂 Project Structure
 
-```text
-CodeAlpha_MusicGeneration/
-├── app.py
-├── requirements.txt
+```
+CodeAlpha_Music-Generation-with-AI/
+├── app.py               # Flask application and MusicGen integration
+├── requirements.txt     # Python dependencies
 ├── templates/
-│   └── index.html
+│   └── index.html       # Web interface template
 ├── static/
-│   ├── style.css
-│   └── script.js
+│   ├── style.css        # Styling
+│   └── script.js        # Frontend logic
 └── README.md
 ```
 
 ## 🎯 Project Objective
 
-To explore generative AI and deep learning by building a web application capable of creating music from natural language descriptions.
+Explore generative AI and deep learning by building a web application capable of creating music from natural language descriptions using Meta's MusicGen model.
 
 ## 👨‍💻 Internship
 
@@ -90,4 +114,6 @@ This project was developed as part of the **Artificial Intelligence Internship a
 
 ---
 
-⭐ If you find this project interesting, consider giving it a star!
+<p align="center">
+  <sub>Built by <a href="https://github.com/OmkarSolat-17">Omkar Solat</a> · B.Tech CSE (AI/ML)</sub>
+</p>
